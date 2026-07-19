@@ -20,20 +20,23 @@ class Solution
 		int size = nums.size();
 		int left = 0, right = size - 1;
 		int ops = 0;
+		int find = k - nums[left];
 		while (left < right)
 		{
-			int find = k - nums[left];
 			cout << "find : " << find << endl;
 			cout << "left : " << nums[left] << "," << "right : " << nums[right] << endl;
 			if (nums[right] < find)
 			{
 				left++;
+				find = k - nums[left];
 				continue ;
 			}
 			if (nums[right] == find)
 			{
 				ops++;
 				left++;
+				find = k - nums[left];
+
 				right--;
 				continue ;
 			}
@@ -45,10 +48,11 @@ class Solution
 
 int	main(void)
 {
-	Solution sol;
-	vector<int> nums = {3, 1, 3, 4, 3};
-	int res = sol.maxOperations(nums, 6);
+	Solution	sol;
+	int			res;
 
+	vector<int> nums = {1, 2, 3, 4};
+	res = sol.maxOperations(nums, 5);
 	// for (int num : nums)
 	// {
 	// 	cout << num << " ";
@@ -57,3 +61,9 @@ int	main(void)
 	cout << "result : " << res << endl;
 	return (0);
 }
+
+/*
+Runtime
+84ms
+Beats81.66%
+ */
