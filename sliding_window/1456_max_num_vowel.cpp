@@ -17,9 +17,9 @@ class Solution
 	{
 		int size = s.size();
 		int max_vowels = 0;
-
-		// initial sliding window
-		for (int i = 0; i < k; i++)
+		แ
+			// initial sliding window
+			for (int i = 0; i < k; i++)
 		{
 			if (isVowel(s[i]))
 				max_vowels++;
